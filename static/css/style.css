@@ -1,0 +1,306 @@
+@charset "UTF-8";
+
+/* Define a página com A4 */
+@page {
+  height: 1680px;
+  width: 2396px;
+  margin: 0;
+}
+
+html {
+  font-family: sans-serif;
+  font-size: 14pt;
+  font-weight: 300;
+  line-height: 1.5;
+  page-break-inside: avoid;
+
+}
+
+table { page-break-after:auto }
+tr    { page-break-inside:avoid; page-break-after:auto }
+td    { page-break-inside:avoid; page-break-after:auto }
+thead { display: table-row-group; }
+tfoot { display:table-footer-group }
+
+html body p,
+html body h1,
+html body h2,
+html body h3,
+html body h4,
+html body h6 {
+  margin: 0;
+}
+
+p {
+  font-size: 14pt;
+}
+
+html body ul {
+  list-style: none;
+  font-weight: 550;
+  margin: 0;
+}
+
+html body li {
+  display: inline;
+}
+
+/* Componente: Tabela padrão usada no corpo de texto */
+.componente-tabela-padrao {
+  float: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  text-indent: 0;
+  margin-top: 0.2cm;
+  margin-bottom: 0.2cm;
+}
+
+.componente-tabela-padrao img {
+  width: 240px;
+}
+
+/* Table Generator */
+.tabela-padrao  {
+  border-spacing:0;
+  border-color: #2f68b2ff;
+}
+.tabela-padrao td{
+  border-width:1px;
+  font-family:Arial, sans-serif;
+  font-size:14pt;
+  overflow:hidden;
+  padding:10px 5px;
+  word-break:normal;
+}
+.tabela-padrao th{
+  border-width:1px;
+  font-family:Arial, sans-serif;
+  font-size:14pt;
+  font-weight:normal;
+  overflow:hidden;
+  padding:10px 5px;
+  word-break:normal;
+}
+.tabela-padrao .tabela-padrao-imagem{
+  border-color:inherit;
+  text-align:center;
+  vertical-align:top
+}
+.tabela-padrao .tabela-padrao-linha{
+  border-color:inherit;
+  text-align:left;
+  vertical-align:top
+}
+.tabela-padrao .tabela-padrao-de2y{
+  border-color:#333333;
+  text-align:left;
+  vertical-align:top
+}
+
+.tabela-nivel-1 {
+  background-color: #e8f1e5ff;
+  border-bottom: solid;
+  border-right: solid;
+}
+
+.tabela-nivel-1-imagem {
+  background-color: #e8f1e5ff;
+  border-left-style: solid;
+  border-bottom: solid;
+}
+
+.tabela-nivel-2 {
+  background-color: #e9e4f1ff;
+  border-bottom: solid;
+  border-right: solid;
+}
+
+.tabela-nivel-2-imagem {
+  background-color: #e9e4f1ff;
+  border-left-style: solid;
+  border-bottom: solid;
+}
+
+.tabela-nivel-3 {
+  background-color: #fae7dbff;
+  border-bottom: solid;
+  border-right: solid;
+}
+
+.tabela-nivel-3-imagem {
+  background-color: #fae7dbff;
+  border-left-style: solid;
+  border-bottom: solid;
+}
+
+.tabela-nivel-5 {
+  background-color: #e5f0ffff;
+  border-bottom: solid;
+  border-right: solid;
+}
+
+.tabela-nivel-5-imagem {
+  background-color: #e5f0ffff;
+  border-left-style: solid;
+  border-bottom: solid;
+}
+
+.tabela-correcao-viavel {
+  border:solid;
+  border-top: none;
+}
+
+.tabela-aluno {
+  border:solid;
+  border-top-left-radius: 25px;
+}
+
+.tabela-realizacao {
+  border:solid;
+  border-top-right-radius: 25px;
+  border-left: none;
+}
+
+.tabela-correcoes {
+  border:solid;
+  border-left: none;
+  border-top: none;
+}
+
+.tabela-rodape {
+  border: solid;
+  border-bottom-left-radius: 25px;
+  border-top: none;
+  border-right: none;
+}
+
+.tabela-logos {
+  border: solid;
+  border-bottom-right-radius: 25px;
+  border-top: none;
+  border-left: none;
+}
+
+.pontos-niveis {
+  border: solid;
+  border-top: none;
+  border-left: none;
+}
+
+.pontos-niveis-cabecalho-1 {
+  border: solid;
+  border-left: none;
+  border-top: none;
+}
+
+.pontos-niveis-cabecalho-2 {
+  border: solid;
+  border-left: none;
+  border-top: none;
+}
+
+.tabela-meio {
+  border: solid;
+  border-top: none;
+}
+
+table#interna
+{
+  border-spacing:20px 20px;
+}
+
+.tabela-interna td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0px;
+}
+
+.tabela-interna p {
+  font-weight: bold;
+  color: #2f68b2ff;
+}
+
+.td-lista {
+  border-left: solid;
+  border-color: #2f68b2ff;
+}
+
+.lista-padrao-verde li::before {
+  content: "✓";
+  font-weight: 800; 
+  color: #327d3dff; 
+  margin-left: 0.5cm;
+  display: inline-block; 
+  width: 1em;
+  margin-left: -1em;
+}
+
+.lista-padrao-verde {
+  color: #327d3dff;
+}
+
+.lista-padrao-verde li {
+  margin-right: 20px;
+}
+
+.lista-padrao-vermelho li::before {
+  content: "x"; 
+  font-weight: 800;
+  color: #d13325ff; 
+  margin-left: 0.5cm;
+  display: inline-block; 
+  width: 1em;
+  margin-left: -1em;
+}
+
+.lista-padrao-vermelho {
+  color: #d13325ff;
+ }
+
+.lista-padrao-vermelho li {
+  margin-right: 20px;
+}
+
+h3, h6 {
+  color: #2f68b2ff;
+}
+
+.nivel-1 h4 {
+  color: #126635ff;
+}
+
+.nivel-2 h4 {
+  color: #6c3792ff;
+}
+
+.nivel-3 h4 {
+  color: #971b1eff;
+}
+
+.nivel-5 h4 {
+  color: #373c98ff;
+}
+
+.tabela-estado img {
+  width: 160px;
+}
+
+.tabela-estado {
+  text-align: center;
+  padding: 0;
+}
+
+.tabela-estado td {
+  padding: 0;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+#check-grande {
+  width: 40px;
+}
+
+h2, h3 {
+  font-size: 24pt;
+}
