@@ -24,9 +24,9 @@ class GeradorCaderno:
     # Checa se o estado será com imagem azul ou branca
     def checa_estado(self, estado):
         if estado == 'True':
-            return 'file:///home/lfelipev/pdf_generator/assets/check.png'
+            return 'file://{}/check.png'.format(self.LOCAL_ASSETS)
         else:
-            return 'file:///home/lfelipev/pdf_generator/assets/blank-check.png'
+            return 'file://{}/blank-check.png'.format(self.LOCAL_ASSETS)
     
     # Pega o título do nível
     def pega_nivel_titulo(self, nivel_numero):
@@ -90,7 +90,7 @@ class GeradorCaderno:
               <table>
                 <tr>
                   <td>
-                    <img id="check-grande" src="file:///home/lfelipev/pdf_generator/assets/check-grande.png">
+                    <img id="check-grande" src="file://{}/check-grande.png">
                   </td>
                   <td>
                     <h2> Correção Viável</h2>
@@ -141,14 +141,14 @@ class GeradorCaderno:
 
               
             </td>
-          </tr>'''.format(nome, ano, turma, ciclo, data, escola, cidade, uf, self.checa_estado(normal), self.checa_estado(branco), self.checa_estado(insuficiente), self.checa_estado(anulado), self.checa_estado(copia), self.checa_estado(nao_alfabetico), self.checa_estado(fuga_ao_tema), self.checa_estado(fuga_a_tipologia))
+          </tr>'''.format(nome, ano, turma, ciclo, data, escola, cidade, uf, self.LOCAL_ASSETS, self.checa_estado(normal), self.checa_estado(branco), self.checa_estado(insuficiente), self.checa_estado(anulado), self.checa_estado(copia), self.checa_estado(nao_alfabetico), self.checa_estado(fuga_ao_tema), self.checa_estado(fuga_a_tipologia))
 
         niveis = len(self.dados['niveis'])
 
         padrao = cabecalho
         for i in range(0, niveis):
             nivel_numero = self.dados['niveis'][i]['numero']
-            nivel_img = 'file:///home/lfelipev/pdf_generator/assets/nivel{}.png'.format(nivel_numero)
+            nivel_img = 'file://{}/nivel{}.png'.format(self.LOCAL_ASSETS, nivel_numero)
             nivel_titulo = self.pega_nivel_titulo(int(nivel_numero))
             nivel_descricao = self.pega_nivel_descricao(int(nivel_numero))
 
