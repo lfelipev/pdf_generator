@@ -217,17 +217,4 @@ class GeradorCaderno:
         string_renderizada = template.render(variaveis_template)
         html = weasyprint.HTML(string=string_renderizada)
         relatorio = os.path.join(self.DIRETORIO_DESTINO, self.ARQUIVO_SAIDA)
-        return html.write_pdf(relatorio, stylesheets=[css])
-
-# Método que retorna o JSON do caderno no formato dicionário
-def get_json():
-    # Open the orders.json file
-    with open("caderno.json", encoding='utf-8') as file:
-        # Load its content and make a new dictionary
-        data = json.load(file)
-        return data
-
-json = get_json()
-    
-gerar_caderno = GeradorCaderno(json)
-gerar_caderno.gerar_caderno()
+        return html.write_pdf(stylesheets=[css])
