@@ -194,7 +194,7 @@ class GeradorCaderno:
 
           <!-- Quinto e Link -->
           <tr>
-            <td class="tabela-padrao-imagem tabela-adequacao-a-proposta-imagem" rowspan="2"><img src="file://{self.LOCAL_ASSETS}/niveis/adequacao_a_proposta{quarto_nivel}.png"></td>
+            <td class="tabela-padrao-imagem tabela-adequacao-a-proposta-imagem" rowspan="2"><img src="file://{self.LOCAL_ASSETS}/niveis/adequacao_a_proposta{quinto_nivel}.png"></td>
             <td class="tabela-padrao-linha tabela-adequacao-a-proposta adequacao-a-proposta" rowspan="2"><h4>{quinto_nivel_titulo}</h4><p>{quinto_nivel_descricao}<p></td>
             
             <td class="tabela-padrao-link tabela-link" rowspan="2" colspan="2">Acesse o <b>Plano Personalizado</b> aqui: <a href="http:/abreai.com/fedf6">http:/abreai.com/fedf6</a></td>
@@ -217,6 +217,8 @@ class GeradorCaderno:
           """
 
         padrao = cabecalho + corpo
+
+        print(padrao)
 
         return padrao
 

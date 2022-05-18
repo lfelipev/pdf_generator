@@ -32,7 +32,7 @@ html body h6 {
 }
 
 p {
-  font-size: 14pt;
+  font-size: 16pt;
 }
 
 html body ul {
@@ -68,7 +68,7 @@ html body li {
 .tabela-padrao td{
   border-width:1px;
   font-family:Arial, sans-serif;
-  font-size:14pt;
+  font-size:16pt;
   overflow:hidden;
   padding:10px 5px;
   word-break:normal;
@@ -76,7 +76,7 @@ html body li {
 .tabela-padrao th{
   border-width:1px;
   font-family:Arial, sans-serif;
-  font-size:14pt;
+  font-size:16pt;
   font-weight:normal;
   overflow:hidden;
   padding:10px 5px;
@@ -413,6 +413,10 @@ h3, h6 {
 
 .pontuacao h4 {
   color: #2100b6ff;
+}
+
+.segmentacao h4 {
+  color: #6c3792ff;
 }
 
 .adequacao-a-proposta h4 {
