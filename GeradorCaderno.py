@@ -4,6 +4,9 @@ from jinja2 import Environment, FileSystemLoader
 import json
 from pathlib import Path
 
+# TO DO
+# Remover as funções não usadas
+
 class GeradorCaderno:
     def __init__(self, json) -> None:
         self.RAIZ = Path(__file__).resolve().parent
@@ -53,13 +56,20 @@ class GeradorCaderno:
       if nivel == "E" or nivel == "Nível E":
         return '5'
     
+    # TO DO
+    # Colocar mais níveis ortográficos
     def pega_estados(self, estado):
       if estado == "Nível Ortográfico":
         normal = 'check.png'
         branco = 'blank-check.png'
         pre_silabico = branco
         defeito = branco
-      
+      else:
+        normal = 'blank-check.png'
+        branco = normal
+        pre_silabico = branco
+        defeito = branco
+
       return normal, branco, pre_silabico, defeito
 
     # Método que gera uma tabela padrão com bordas
