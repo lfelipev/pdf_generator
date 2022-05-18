@@ -1,60 +1,60 @@
 {
-  "id": "f97440d5-4ba8-47bf-aab3-92d2e5141f76",
-  "state": "SUCCESS",
-  "grade": "ef67",
-  "task": "produção narrativa",
-  "nome": "Natalia de Almeida Barreto",
-  "turma": "7º B",
+        "id": "f4e52843-b6f2-4d9d-81a2-3e093c457cfb",
+        "state": "SUCCESS",
+        "grade": "ef67",
+        "task": "produção narrativa",
+        "nome": "ALEJANDRO VIEIRA DA SILVA",
+  "turma": "7Âº ANO K",
   "ciclo": "1",
   "data": "12/05/2021",
   "escola": "COLEGIO MUNICIPAL MONSENHOR JOSE DE ANCHIETA CALLO - 26073471",
   "cidade": "Brasília",
   "uf": "DF",
-  "metadata": {
-          "subject": [
-                  "teste",
-                  "teste"
-          ],
-          "expected": []
-  },
-  "extracted_text": "Eu estava no quintal da casa de meus avós, de repente, um gato branco com bolinhas pretas pediu uma imformação, ele perguntou, onde é minha casa?, Eu apavorada pois nunca tinha visto um gato falar, ele mim disse: você estar bem? Você parece supresa. Em então perguntei Como você pode falar? isso é um sonho? ele riu e falou todos os animais falam eu aprendir a falar português com minha dona. Então eu sai com o gato falante a procura de sua cassa, ao longo do caminho perguntei seu nome ele mim disse: a minha dona mim deu o nome de toti. então ao olhar para o gato eu vi uma coleira conm números então tive a ideia de ligar para aquele número. liguei e uma mulher muito doce atendeu, eu disse que estava com o gatinho perdido dela e ela veio busca rápidamente ele e agora ele deve estar em casa com sua dona. e eu nunca vou esquecer essa aventura do gato falante e Eu.",
-  "result": {
-          "coesao": {
-                  "id": "D",
-                  "level": "D",
-                  "description": "O estudante produziu texto sem articulação entre suas partes, configurando uma de lista de palavras e/ou frases soltas.",
-                  "probability": 0.9997504634210783
-          },
-          "pontuacao": {
-                  "id": "B",
-                  "level": "B",
-                  "description": "O estudante pontuou inadequadamente na maioria das vezes em que utilizou os sinais de pontuação.",
-                  "probability": 1.0
-          },
-          "ortografia": {
-                  "id": "ORTHOGRAPHIC",
-                  "level": "Nível Ortográfico",
-                  "description": "O estudante, além de compreender que cada som representa uma letra, escreve a palavra obedecendo aosprincípios da ortografia",
-                  "probability": 1.0
-          },
-          "segmentacao": {
-                  "id": "B",
-                  "level": "B",
-                  "description": "O estudante apresentou poucos desvios de segmentação em relação ao texto como um todo.",
-                  "probability": 0.9418859649122807
-          },
-          "tipologia_textual": {
-                  "id": "D",
-                  "level": "D",
-                  "description": "O estudante escreveu um texto que não se configura como uma narrativa, ou seja, não atendeu à tipologia textual, elaborando outra estrutura textual.",
-                  "probability": 1.0
-          },
-          "adequacao_a_proposta": {
-                  "id": "C",
-                  "level": "Nível C",
-                  "description": "O estudante escreveu um texto que não é coerente com a sequência de imagens/situação motivadora, ou seja, aborda algo completamente diferente do proposto.",
-                  "probability": 1.0
-          }
-  },
-  "created_at": "2022-05-17T15:14:57.111599Z"
+        "metadata": {
+                "subject": [
+                        "teste",
+                        "teste"
+                ],
+                "expected": []
+        },
+        "extracted_text": "eu estava la ga vem o gato e falou iau so que eu mao suber responder deixa que ele qeria uma informasão e ai fiquei sen saber oque ele queria.",
+        "result": {
+                "coesao": {
+                        "id": "D",
+                        "level": "D",
+                        "description": "O estudante produziu texto sem articulação entre suas partes, configurando uma de lista de palavras e/ou frases soltas.",
+                        "probability": 1.0
+                },
+                "pontuacao": {
+                        "id": "D",
+                        "level": "D",
+                        "description": "Nenhuma pontuação encontrada.",
+                        "probability": 1.0
+                },
+                "ortografia": {
+                        "id": "ORTHOGRAPHIC",
+                        "level": "Nível Ortográfico",
+                        "description": "O estudante, além de compreender que cada som representa uma letra, escreve a palavra obedecendo aosprincípios da ortografia",
+                        "probability": 1.0
+                },
+                "segmentacao": {
+                        "id": "B",
+                        "level": "B",
+                        "description": "O estudante apresentou poucos desvios de segmentação em relação ao texto como um todo.",
+                        "probability": 0.953125
+                },
+                "tipologia_textual": {
+                        "id": "D",
+                        "level": "D",
+                        "description": "O estudante escreveu um texto que não se configura como uma narrativa, ou seja, não atendeu à tipologia textual, elaborando outra estrutura textual.",
+                        "probability": 1.0
+                },
+                "adequacao_a_proposta": {
+                        "id": "C",
+                        "level": "Nível C",
+                        "description": "O estudante escreveu um texto que não é coerente com a sequência de imagens/situação motivadora, ou seja, aborda algo completamente diferente do proposto.",
+                        "probability": 1.0
+                }
+        },
+        "created_at": "2022-05-17T14:44:56.873334Z"
 }

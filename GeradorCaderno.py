@@ -208,8 +208,6 @@ class GeradorCaderno:
 
         padrao = cabecalho + corpo
 
-        print(padrao)
-
         return padrao
 
     # Método principal que chama o JINJA para gerar o template HTML e converter em PDF
