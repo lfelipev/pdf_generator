@@ -23,7 +23,7 @@ class GeradorCaderno:
 
     # Checa se o estado será com imagem azul ou branca
     def checa_estado(self, estado):
-        if estado == 'True':
+        if estado == 'Nível Ortográfico':
             return 'file://{}/check.png'.format(self.LOCAL_ASSETS)
         else:
             return 'file://{}/blank-check.png'.format(self.LOCAL_ASSETS)
@@ -41,23 +41,30 @@ class GeradorCaderno:
         if nivel_numero == 5:
             return 'Registro Formal'
     
-    # Pega a descrição do nível
-    def pega_nivel_descricao(self, nivel_numero):
-        if nivel_numero == 1:
-            return 'Palavras e períodos justapostos e desconexos ao longo do texto, ou seja, ausência de articulação, porém há uma coesão marcada pela relação lógica entre palavras e/ou enunciados ou Repertório coesivo escasso e com desvios recorrentes.'
-        if nivel_numero == 2:
-            return 'Apresenta progressão textual insuficiente, utilizando-se apenas das ideias da situação motivadora e/ou Apresenta progressão textual completa, porém com predomínio de trechos copiados da situação motivadora.'
-        if nivel_numero == 3:
-            return 'Apresenta e desenvolve apenas 2 (duas) partes estruturantes do enredo narrativo (orientação, complicação e desfecho) e/ou apresenta as 3 (três) partes, mas não desenvolve 2 (duas) delas e/ou apresenta apenas 2 (dois) elementos que concorrem para a construção da narrativa (personagens, narrador, organização temporal, lugar).'
-        if nivel_numero == 4:
-            return ''
-        if nivel_numero == 5:
-            return 'Apresenta estrutura morfossintática bem empregada com, no máximo, 5 (cinco) desvios pontuais e não recorrentes.'
+    def pega_nivel(self, nivel):
+      if nivel == "A" or nivel == "Nível A":
+        return '1'
+      if nivel == "B" or nivel == "Nível B":
+        return '2'
+      if nivel == "C" or nivel == "Nível C":
+        return '3'
+      if nivel == "D" or nivel == "Nível D":
+        return '4'
+      if nivel == "E" or nivel == "Nível E":
+        return '5'
+    
+    def pega_estados(self, estado):
+      if estado == "Nível Ortográfico":
+        normal = 'check.png'
+        branco = 'blank-check.png'
+        pre_silabico = branco
+        defeito = branco
+      
+      return normal, branco, pre_silabico, defeito
 
     # Método que gera uma tabela padrão com bordas
     def componente_tabela_padrao(self):
         nome = self.dados['nome']
-        ano = self.dados['ano']
         turma = self.dados['turma']
         ciclo = self.dados['ciclo']
         data = self.dados['data']
@@ -65,22 +72,18 @@ class GeradorCaderno:
         cidade = self.dados['cidade']
         uf = self.dados['uf']
 
-        normal = self.dados['estado']['normal']
-        branco = self.dados['estado']['branco']
-        insuficiente = self.dados['estado']['insuficiente']
-        anulado = self.dados['estado']['anulado']
-        copia = self.dados['estado']['copia']
-        nao_alfabetico = self.dados['estado']['nao_alfabetico']
-        fuga_ao_tema = self.dados['estado']['fuga_ao_tema']
-        fuga_a_tipologia = self.dados['estado']['fuga_a_tipologia']
+        estado = self.dados['result']['ortografia']['level']
+        normal, branco, pre_silabico, defeito = self.pega_estados(estado)
 
-        cabecalho = '''
+        nivel_ortografico = self.dados['result']['ortografia']['level']
+        
+        cabecalho = f'''
         <div class="componente-tabela-padrao">
         <table class="tabela-padrao">
         <thead>
           <tr>
-            <th class="tabela-padrao-linha tabela-aluno" colspan="2"><h3>{}</h3><small><b>{}</b> Ano - Turma <b>{}</b></small></th>
-            <th class="tabela-padrao-linha tabela-realizacao" colspan="7">Ciclo {} – Prova realizada em {}<h6>{} – Cidade {} – {}</h6></th>
+            <th class="tabela-padrao-linha tabela-aluno" colspan="2"><h3>{nome}</h3><small>{turma}</small></th>
+            <th class="tabela-padrao-linha tabela-realizacao" colspan="7">Ciclo {ciclo} – Prova realizada em {data}<h6>{escola} – Cidade {cidade} – {uf}</h6></th>
           </tr>
         </thead>
         <tbody>
@@ -90,117 +93,123 @@ class GeradorCaderno:
               <table>
                 <tr>
                   <td>
-                    <img id="check-grande" src="file://{}/check-grande.png">
+                    <img id="check-grande" src="file://{self.LOCAL_ASSETS}/check-grande.png">
                   </td>
                   <td>
-                    <h2> Correção Viável</h2>
+                    <h2> Correção Viável: <small>{nivel_ortografico}</small></h2>
                   </td>
                 </tr>
               </table>
             
             </td>
-            <td class="tabela-padrao-linha tabela-correcoes" colspan="7">
+            <td class="tabela-correcoes" colspan="7">
               <table class="tabela-estado">
                 <tr>
                   <td>
                     Normal
                   </td>
                   <td>
-                    Branco
+                    Em Branco
                   </td>
                   <td>
-                    Insuficiente
+                    Pré-silábico
                   </td>
                   <td>
-                    Anulado
-                  </td>
-                  <td>
-                    Cópia
-                  </td>
-                  <td>
-                    Não alfabético
-                  </td>
-                  <td>
-                    Fuga ao tema
-                  </td>
-                  <td>
-                    Fuga à tipologia
+                    Defeito
                   </td>
                 </tr>
                 <tr>
-                  <td><img src="{}"></td>
-                  <td><img src="{}"></td>
-                  <td><img src="{}"></td>
-                  <td><img src="{}"></td>
-                  <td><img src="{}"></td>
-                  <td><img src="{}"></td>
-                  <td><img src="{}"></td>
-                  <td><img src="{}"></td>
+                  <td><img src="file://{self.LOCAL_ASSETS}/{normal}"></td>
+                  <td><img src="file://{self.LOCAL_ASSETS}/{branco}"></td>
+                  <td><img src="file://{self.LOCAL_ASSETS}/{pre_silabico}"></td>
+                  <td><img src="file://{self.LOCAL_ASSETS}/{defeito}"></td>
                 </tr>
               </table>
 
               
             </td>
-          </tr>'''.format(nome, ano, turma, ciclo, data, escola, cidade, uf, self.LOCAL_ASSETS, self.checa_estado(normal), self.checa_estado(branco), self.checa_estado(insuficiente), self.checa_estado(anulado), self.checa_estado(copia), self.checa_estado(nao_alfabetico), self.checa_estado(fuga_ao_tema), self.checa_estado(fuga_a_tipologia))
-
-        niveis = len(self.dados['niveis'])
-
+          </tr>'''
+        
         padrao = cabecalho
-        for i in range(0, niveis):
-            nivel_numero = self.dados['niveis'][i]['numero']
-            nivel_img = 'file://{}/nivel{}.png'.format(self.LOCAL_ASSETS, nivel_numero)
-            nivel_titulo = self.pega_nivel_titulo(int(nivel_numero))
-            nivel_descricao = self.pega_nivel_descricao(int(nivel_numero))
 
-            padrao = padrao + """
-            <!-- Nível 5 -->
-            <tr>
-            <td class="tabela-padrao-imagem tabela-nivel-{}-imagem" rowspan="2"><img src="{}"></td>
-            <td class="tabela-padrao-linha tabela-nivel-{} nivel-{}" rowspan="2"><h4>{}</h4><p>{}</p></td>
-            <td class="tabela-padrao-linha  pontos-niveis-cabecalho pontos-niveis-cabecalho-1" colspan="7" rowspan="2">
-            <table id="interna" class="tabela-interna">
-            <tr>
-            <td class="td-cabecalho"><p>O que está bom</p></td>
-            <td class="td-lista">
-            <ul class="lista-padrao-verde">""".format(nivel_numero, nivel_img, nivel_numero, nivel_numero, nivel_titulo, nivel_descricao)
+        # Primeiro Nível
+        primeiro_nivel = self.pega_nivel(self.dados['result']['coesao']['level'])
+        primeiro_nivel_titulo = 'Coesão'
+        primeiro_nivel_descricao = self.dados['result']['coesao']['description']
 
-            for elemento in self.dados['niveis'][i]['o-que-esta-bom']:
-                padrao = padrao + "<li>{}</li>".format(elemento)
-                        
-            padrao = padrao + """
-            </ul>
-            </td>
-            </tr>
-            <tr>
-            <td class="td-cabecalho"><p>O que pode melhorar</p></td>
-            <td class="td-lista">
-            <ul class="lista-padrao-vermelho">
-            """
+        # Segundo Nível
+        segundo_nivel = self.pega_nivel(self.dados['result']['pontuacao']['level'])
+        segundo_nivel_titulo = 'Pontuação'
+        segundo_nivel_descricao = self.dados['result']['pontuacao']['description']
 
-            for elemento in self.dados['niveis'][i]['o-que-pode-melhorar']:
-                padrao = padrao + "<li>{}</li>".format(elemento)
+        # Terceiro Nível
+        terceiro_nivel = self.pega_nivel(self.dados['result']['segmentacao']['level'])
+        terceiro_nivel_titulo = 'Segmentação'
+        terceiro_nivel_descricao = self.dados['result']['segmentacao']['description']
+
+        # Quarto Nível
+        quarto_nivel = self.pega_nivel(self.dados['result']['tipologia_textual']['level'])
+        quarto_nivel_titulo = 'Tipologia Textual'
+        quarto_nivel_descricao = self.dados['result']['tipologia_textual']['description']
+
+        # Quinto Nível
+        quinto_nivel = self.pega_nivel(self.dados['result']['adequacao_a_proposta']['level'])
+        quinto_nivel_titulo = 'Adequação à proposta'
+        quinto_nivel_descricao = self.dados['result']['adequacao_a_proposta']['description']
+
+        corpo = f"""
+          <! -- Primeiro e Segundo --!>
+          <tr>
+            <td class="tabela-padrao-imagem tabela-coesao-imagem" rowspan="2"><img src="file://{self.LOCAL_ASSETS}/niveis/coesao{primeiro_nivel}.png"></td>
+            <td class="tabela-padrao-linha tabela-coesao coesao" rowspan="2"><h4>{primeiro_nivel_titulo}</h4><p>{primeiro_nivel_descricao}<p></td>
             
-            padrao = padrao + """
-            <li>Emprego indevido da vírgula</li>
-            </ul>
+            <td class="tabela-padrao-imagem tabela-pontuacao-imagem" rowspan="2"><img src="file://{self.LOCAL_ASSETS}/niveis/pontuacao{segundo_nivel}.png"></td>
+            <td class="tabela-padrao-linha tabela-pontuacao-direita pontuacao" rowspan="2"><h4>{segundo_nivel_titulo}</h4><p>{segundo_nivel_descricao}<p></td>  
+          </tr>
+          
+          <tr>
+          </tr>
+
+          <! -- Terceiro e Quarto --!>
+          <tr>
+            <td class="tabela-padrao-imagem tabela-segmentacao-imagem" rowspan="2"><img src="file://{self.LOCAL_ASSETS}/niveis/segmentacao{terceiro_nivel}.png"></td>
+            <td class="tabela-padrao-linha tabela-segmentacao segmentacao" rowspan="2"><h4>{terceiro_nivel_titulo}</h4><p>{terceiro_nivel_descricao}<p></td>
+            
+            <td class="tabela-padrao-imagem tabela-tipologia-textual-imagem" rowspan="2"><img src="file://{self.LOCAL_ASSETS}/niveis/tipologia_textual{quarto_nivel}.png"></td>
+            <td class="tabela-padrao-linha tabela-tipologia-textual-direita tipologia-textual" rowspan="2"><h4>{quarto_nivel_titulo}</h4><p>{quarto_nivel_descricao}<p></td>  
+          </tr>
+          
+          <tr>
+          </tr>
+
+          <!-- Quinto e Link -->
+          <tr>
+            <td class="tabela-padrao-imagem tabela-adequacao-a-proposta-imagem" rowspan="2"><img src="file://{self.LOCAL_ASSETS}/niveis/adequacao_a_proposta{quarto_nivel}.png"></td>
+            <td class="tabela-padrao-linha tabela-adequacao-a-proposta adequacao-a-proposta" rowspan="2"><h4>{quinto_nivel_titulo}</h4><p>{quinto_nivel_descricao}<p></td>
+            
+            <td class="tabela-padrao-link tabela-link" rowspan="2" colspan="2">Acesse o <b>Plano Personalizado</b> aqui: <a href="http:/abreai.com/fedf6">http:/abreai.com/fedf6</a></td>
+            
+          </tr>
+          <tr>
+          </tr>
+
+          <tr>
+            <td class="tabela-padrao-linha tabela-rodape" colspan="2"></td>
+            <td class="tabela-padrao-linha tabela-meio"></td>
+            <td class="tabela-logos" colspan="6">
+              <img src="file://{self.LOCAL_ASSETS}/logos.png">
             </td>
-            </tr>
-            </table>
-            </td>
-            </tr>
-            <tr>
-            </tr>
-            """
-        rodape = """
-            <tr>
-                <td class="tabela-padrao-linha tabela-rodape" colspan="2">Acesse o <b>Plano Personalizado</b> aqui: <a href="http:/abreai.com/fedf6">http:/abreai.com/fedf6</a></td>
-                <td class="tabela-padrao-linha tabela-meio"></td>
-                <td class="tabela-padrao-linha tabela-logos" colspan="6">Logos</td>
-            </tr>
+          </tr>
+          
             </tbody>
             </table>
-        </div>
-        """
+          </div>
+          """
+
+        padrao = cabecalho + corpo
+
+        print(padrao)
+
         return padrao
 
     # Método principal que chama o JINJA para gerar o template HTML e converter em PDF

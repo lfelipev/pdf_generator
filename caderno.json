@@ -1,64 +1,60 @@
 {
-  "nome": "Maria AB",
-  "ano": "6",
-  "turma": "B",
+  "id": "f97440d5-4ba8-47bf-aab3-92d2e5141f76",
+  "state": "SUCCESS",
+  "grade": "ef67",
+  "task": "produção narrativa",
+  "nome": "Natalia de Almeida Barreto",
+  "turma": "7º B",
   "ciclo": "1",
   "data": "12/05/2021",
-  "escola": "Escola Lorem Ipsum Dolor Sit Amet",
-  "cidade": "brasilia",
+  "escola": "COLEGIO MUNICIPAL MONSENHOR JOSE DE ANCHIETA CALLO - 26073471",
+  "cidade": "Brasília",
   "uf": "DF",
-  "estado": {
-    "normal": "True",
-    "branco": "False",
-    "insuficiente": "False",
-    "anulado": "False",
-    "copia": "False",
-    "nao_alfabetico": "False",
-    "fuga_ao_tema": "False",
-    "fuga_a_tipologia": "False"
+  "metadata": {
+          "subject": [
+                  "teste",
+                  "teste"
+          ],
+          "expected": []
   },
-  "niveis": [
-    {
-      "numero": "5",
-      "o-que-esta-bom": [
-        "Adequação vocabular",
-        "Conhecimentos semânticos",
-        "Concordância nominal/verbal",
-        "Regência nominal/verbal"
-      ],
-      "o-que-pode-melhorar": [
-        "Emprego indevido da vírgula"
-      ]
-    },
-    {
-      "numero": "2",
-      "o-que-esta-bom": [
-        "Manutenção da unidade temática"
-      ],
-      "o-que-pode-melhorar": [
-        "Articulação dos eixos de informação",
-        "Apresentação de novas informações sobre o tema",
-        "Desdobramento coerente do tema em tópicos e subtópicos"
-      ]
-    },
-    {
-      "numero": "3",
-      "o-que-esta-bom": [
-        "Orientação",
-        "Desfecho"
-      ],
-      "o-que-pode-melhorar": [
-        "Complicação"
-      ]
-    },
-    {
-      "numero": "1",
-      "o-que-esta-bom": "",
-      "o-que-pode-melhorar": [
-        "Falta de encadeamento lógico-semântico",
-        "Períodos compostos mal estruturados sintatibamente",
-        "Emprego repetitivo de palavras"
-      ]
-    }
-  ]
+  "extracted_text": "Eu estava no quintal da casa de meus avós, de repente, um gato branco com bolinhas pretas pediu uma imformação, ele perguntou, onde é minha casa?, Eu apavorada pois nunca tinha visto um gato falar, ele mim disse: você estar bem? Você parece supresa. Em então perguntei Como você pode falar? isso é um sonho? ele riu e falou todos os animais falam eu aprendir a falar português com minha dona. Então eu sai com o gato falante a procura de sua cassa, ao longo do caminho perguntei seu nome ele mim disse: a minha dona mim deu o nome de toti. então ao olhar para o gato eu vi uma coleira conm números então tive a ideia de ligar para aquele número. liguei e uma mulher muito doce atendeu, eu disse que estava com o gatinho perdido dela e ela veio busca rápidamente ele e agora ele deve estar em casa com sua dona. e eu nunca vou esquecer essa aventura do gato falante e Eu.",
+  "result": {
+          "coesao": {
+                  "id": "D",
+                  "level": "D",
+                  "description": "O estudante produziu texto sem articulação entre suas partes, configurando uma de lista de palavras e/ou frases soltas.",
+                  "probability": 0.9997504634210783
+          },
+          "pontuacao": {
+                  "id": "B",
+                  "level": "B",
+                  "description": "O estudante pontuou inadequadamente na maioria das vezes em que utilizou os sinais de pontuação.",
+                  "probability": 1.0
+          },
+          "ortografia": {
+                  "id": "ORTHOGRAPHIC",
+                  "level": "Nível Ortográfico",
+                  "description": "O estudante, além de compreender que cada som representa uma letra, escreve a palavra obedecendo aosprincípios da ortografia",
+                  "probability": 1.0
+          },
+          "segmentacao": {
+                  "id": "B",
+                  "level": "B",
+                  "description": "O estudante apresentou poucos desvios de segmentação em relação ao texto como um todo.",
+                  "probability": 0.9418859649122807
+          },
+          "tipologia_textual": {
+                  "id": "D",
+                  "level": "D",
+                  "description": "O estudante escreveu um texto que não se configura como uma narrativa, ou seja, não atendeu à tipologia textual, elaborando outra estrutura textual.",
+                  "probability": 1.0
+          },
+          "adequacao_a_proposta": {
+                  "id": "C",
+                  "level": "Nível C",
+                  "description": "O estudante escreveu um texto que não é coerente com a sequência de imagens/situação motivadora, ou seja, aborda algo completamente diferente do proposto.",
+                  "probability": 1.0
+          }
+  },
+  "created_at": "2022-05-17T15:14:57.111599Z"
 }
